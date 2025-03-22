@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduEngage - Learn with Joy 🌟</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+</head>
+<body class="font-poppins text-white overflow-x-hidden bg-gray-900">
+    <nav class="bg-gray-800 p-4 flex items-center justify-between fixed top-0 left-0 right-0 z-20">
+        <h2 class="text-2xl font-bold text-white"><i class="fas fa-graduation-cap mr-2"></i>EduEngage</h2>
+        <div class="flex items-center space-x-4">
+            <label class="text-white">Offline Mode:</label>
+            <input type="checkbox" id="offline-toggle" class="toggle-checkbox">
+        </div>
+    </nav>
+    <main class="p-4 pt-16 sm:p-6 sm:pt-20 min-h-screen flex flex-col items-center justify-center text-center">
+        <h2 class="text-5xl md:text-6xl font-extrabold mb-6"><i class="fas fa-graduation-cap mr-2"></i>Learn Smarter, Play Harder</h2>
+        <p class="text-xl mb-8">AI-powered education for everyone, anywhere! 🤓</p>
+        <div class="space-x-4">
+            <button onclick="showModal('login')" class="bg-white text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300"><i class="fas fa-sign-in-alt mr-2"></i>Login</button>
+            <button onclick="showModal('signup')" class="bg-gray-700 text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-600 transition-all duration-300"><i class="fas fa-user-plus mr-2"></i>Sign Up</button>
+        </div>
+        <select id="language-select" class="mt-4 p-2 rounded-lg bg-gray-700 text-white" onchange="changeLanguage(this.value)">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+            <option value="tw">Twi</option>
+        </select>
+    </main>
+    <div id="auth-modal" class="fixed inset-0 bg-gray-900 bg-opacity-75 hidden flex items-center justify-center">
+        <div class="bg-gray-800 p-8 rounded-2xl shadow-2xl w-full max-w-md transform transition-all duration-500 border border-white">
+            <h3 id="modal-title" class="text-2xl font-bold text-white mb-6"><i class="fas fa-lock mr-2"></i></h3>
+            <form id="auth-form" class="space-y-6">
+                <div class="relative">
+                    <i class="fas fa-envelope absolute top-3 left-3 text-white"></i>
+                    <input type="email" id="auth-email" placeholder="Email" class="w-full pl-10 p-3 border rounded-lg focus:ring-2 focus:ring-white text-white bg-gray-700" required>
+                </div>
+                <div class="relative">
+                    <i class="fas fa-key absolute top-3 left-3 text-white"></i>
+                    <input type="password" id="auth-password" placeholder="Password" class="w-full pl-10 p-3 border rounded-lg focus:ring-2 focus:ring-white text-white bg-gray-700">
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-white to-gray-700 text-gray-900 p-3 rounded-lg hover:from-gray-100 hover:to-gray-600 transition-all duration-300"><i class="fas fa-check mr-2"></i>Submit</button>
+            </form>
+            <button onclick="hideModal()" class="mt-4 text-sm text-white hover:text-gray-200"><i class="fas fa-times mr-2"></i>Close</button>
+        </div>
+    </div>
+    <footer class="bg-gray-800 p-6 text-center">
+        <p class="text-sm">© 2025 EduEngage. All rights reserved.</p>
+        <div class="mt-2 space-x-4">
+            <a href="#" class="hover:text-gray-200 transition-colors duration-300">Privacy</a>
+            <a href="#" class="hover:text-gray-200 transition-colors duration-300">Terms</a>
+            <a href="#" class="hover:text-gray-200 transition-colors duration-300">Contact</a>
+        </div>
+    </footer>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(() => console.log('Service Worker Registered'))
+                .catch(err => console.error('Service Worker Error:', err));
+        }
+    </script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduEngage - Profile 🌟</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+</head>
+<body class="font-poppins text-white bg-gray-900">
+    <nav class="bg-gray-800 p-4 flex items-center justify-between fixed top-0 left-0 right-0 z-20">
+        <h2 class="text-2xl font-bold text-white"><i class="fas fa-graduation-cap mr-2"></i>EduEngage</h2>
+        <button id="menu-toggle" class="text-2xl md:hidden"><i class="fas fa-bars"></i></button>
+    </nav>
+    <aside id="sidebar" class="bg-gray-800 p-6 w-64 h-screen fixed top-0 left-0 transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-10">
+        <nav class="space-y-4 mt-16">
+            <a href="dashboard.html" class="block p-3 rounded-lg hover:bg-gray-700 transition-all duration-300"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</a>
+            <a href="lessons.html" class="block p-3 rounded-lg hover:bg-gray-700 transition-all duration-300"><i class="fas fa-book-open mr-2"></i>Lessons</a>
+            <a href="forum.html" class="block p-3 rounded-lg hover:bg-gray-700 transition-all duration-300"><i class="fas fa-comments mr-2"></i>Forum</a>
+            <a href="profile.html" class="block p-3 rounded-lg bg-gray-700 transition-all duration-300"><i class="fas fa-user-circle mr-2"></i>Profile</a>
+            <button id="logout" class="block p-3 text-left w-full rounded-lg hover:bg-gray-700 transition-all duration-300 text-red-300"><i class="fas fa-sign-out-alt mr-2"></i>Logout</button>
+        </nav>
+    </aside>
+    <main class="md:ml-64 p-4 pt-16 sm:p-6 sm:pt-20 min-h-screen">
+        <h1 class="text-3xl font-bold mb-8 animate-fade-in-down">Your Profile 🎉</h1>
+        <section class="bg-gray-800 p-6 rounded-xl shadow-lg mb-8 animate-slide-in-up border border-white">
+            <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <div class="relative">
+                    <img id="profile-image" src="assets/images/default-avatar.png" alt="Profile Image" class="w-24 h-24 rounded-full shadow-lg object-cover">
+                    <input type="file" id="image-upload" accept="image/*" class="mt-2 text-sm text-white w-full">
+                </div>
+                <div class="text-center sm:text-left">
+                    <input id="username-input" type="text" placeholder="Enter Username" class="w-full p-2 mb-2 rounded-lg bg-gray-700 text-white focus:ring-2 focus:ring-white" value="">
+                    <button id="save-profile" class="bg-white text-gray-900 px-4 py-2 rounded-full hover:bg-gray-100 transition-all duration-300 animate-bounce">Save Profile</button>
+                    <p class="text-sm text-white" id="profile-email"><i class="fas fa-envelope mr-2"></i></p>
+                    <p class="text-sm mt-2">Level: <span id="profile-level" class="text-white font-bold animate-pulse"></span> 🚀</p>
+                    <p class="text-sm">Points: <span id="profile-points" class="text-white font-bold animate-pulse"></span> ✨</p>
+                </div>
+            </div>
+        </section>
+        <section class="bg-gray-800 p-6 rounded-xl shadow-lg mb-8 animate-slide-in-up border border-white">
+            <h3 class="text-xl font-semibold mb-4"><i class="fas fa-trophy mr-2"></i>Achievements 🏆</h3>
+            <div class="flex flex-wrap gap-6" id="badges"></div>
+        </section>
+        <section class="bg-gray-800 p-6 rounded-xl shadow-lg animate-slide-in-up border border-white">
+            <h3 class="text-xl font-semibold mb-4"><i class="fas fa-chart-line mr-2"></i>Learning Stats 📊</h3>
+            <p><i class="fas fa-check-circle mr-2"></i>Courses Completed: <span id="courses-completed" class="font-bold text-white"></span></p>
+            <p><i class="fas fa-comment-dots mr-2"></i>Forum Posts: <span id="forum-posts" class="font-bold text-white"></span></p>
+            <p><i class="fas fa-robot mr-2"></i>AI Recommendation Score: <span id="ai-score" class="text-white font-bold animate-pulse"></span></p>
+        </section>
+        <footer class="bg-gray-800 p-6 text-center animate-fade-in-up">
+            <p class="text-sm">© 2025 EduEngage. All rights reserved.</p>
+            <div class="mt-2 space-x-4">
+                <a href="#" class="hover:text-gray-200 transition-colors duration-300">Privacy</a>
+                <a href="#" class="hover:text-gray-200 transition-colors duration-300">Terms</a>
+                <a href="#" class="hover:text-gray-200 transition-colors duration-300">Contact</a>
+            </div>
+        </footer>
+    </main>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

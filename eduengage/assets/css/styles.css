@@ -1,0 +1,87 @@
+:root {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --card-bg: rgba(40, 40, 40, 0.9);
+    --input-bg: #2d2d2d;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.bg-gray-800 { background: var(--card-bg); }
+input, select, textarea { background-color: var(--input-bg); color: var(--text-color); border: 1px solid #4b5563; }
+
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fade-in-down { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slide-in-up { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-20px); } 60% { transform: translateY(-10px); } }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+@keyframes fall { 0% { transform: translateY(-100vh) rotate(0deg); } 100% { transform: translateY(100vh) rotate(360deg); } }
+
+.animate-fade-in { animation: fade-in 0.5s ease-in-out; }
+.animate-fade-in-down { animation: fade-in-down 0.5s ease-in-out; }
+.animate-slide-in-up { animation: slide-in-up 0.5s ease-in-out; }
+.animate-bounce { animation: bounce 2s infinite; }
+.animate-pulse { animation: pulse 2s ease-in-out infinite; }
+.falling-book { animation: fall 5s linear infinite; position: absolute; }
+
+.course-card { background: var(--card-bg); backdrop-filter: blur(12px); border-radius: 16px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.5); }
+.course-card:hover { transform: translateY(-10px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); }
+.course-progress { background: #4b5563; border-radius: 9999px; height: 0.5rem; overflow: hidden; }
+.course-progress-bar { background: linear-gradient(to right, #ffffff, #7c3aed); height: 100%; transition: width 0.5s ease-in-out; }
+
+@media (max-width: 640px) {
+    body { padding: 0; }
+    main { padding: 1rem; padding-top: 4rem; }
+    nav { padding: 0.5rem 1rem; }
+    .md\:ml-64 { margin-left: 0; }
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.25rem; }
+    p { font-size: 0.875rem; }
+    button { font-size: 0.875rem; padding: 0.5rem 1rem; }
+    input, textarea, select { font-size: 0.875rem; padding: 0.5rem; }
+    .text-5xl { font-size: 2rem; }
+    .text-xl { font-size: 1rem; }
+    .space-x-4 > * + * { margin-left: 0.5rem; }
+    .grid-cols-1 { grid-template-columns: 1fr; }
+    .course-card { padding: 1rem; margin-bottom: 1rem; }
+    .course-card h4 { font-size: 1rem; }
+    .continue-btn { width: 100%; }
+    .forum-post { padding: 1rem; }
+    textarea { height: 80px; }
+    .flex.items-center { flex-direction: column; text-align: center; }
+    .space-x-6 { gap: 1rem; }
+    #profile-image { width: 80px; height: 80px; }
+}
+.toggle-checkbox {
+    appearance: none;
+    width: 40px;
+    height: 20px;
+    background: #ccc;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+}
+.toggle-checkbox:checked {
+    background: #4ade80;
+}
+.toggle-checkbox::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+    top: 1px;
+    left: 1px;
+    transition: 0.3s;
+}
+.toggle-checkbox:checked::after {
+    left: 21px;
+}
