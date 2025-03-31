@@ -3,45 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduEngage - Forum 💬</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <title>Forum - LearnSphere</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
 </head>
-<body class="font-poppins text-white bg-gray-900">
-    <nav class="bg-gray-800 p-4 flex items-center justify-between fixed top-0 left-0 right-0 z-20">
-        <h2 class="text-2xl font-bold text-white"><i class="fas fa-graduation-cap mr-2"></i>EduEngage</h2>
-        <button id="menu-toggle" class="text-2xl md:hidden"><i class="fas fa-bars"></i></button>
-    </nav>
-    <aside id="sidebar" class="bg-gray-800 p-6 w-64 h-screen fixed top-0 left-0 transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-10">
-        <nav class="space-y-4 mt-16">
-            <a href="dashboard.html" class="block p-3 rounded-lg hover:bg-gray-700 transition-all duration-300"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</a>
-            <a href="lessons.html" class="block p-3 rounded-lg hover:bg-gray-700 transition-all duration-300"><i class="fas fa-book-open mr-2"></i>Lessons</a>
-            <a href="forum.html" class="block p-3 rounded-lg bg-gray-700 transition-all duration-300"><i class="fas fa-comments mr-2"></i>Forum</a>
-            <a href="profile.html" class="block p-3 rounded-lg hover:bg-gray-700 transition-all duration-300"><i class="fas fa-user-circle mr-2"></i>Profile</a>
-            <button id="logout" class="block p-3 text-left w-full rounded-lg hover:bg-gray-700 transition-all duration-300 text-red-300"><i class="fas fa-sign-out-alt mr-2"></i>Logout</button>
+<body class="bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white min-h-screen">
+    <aside id="sidebar" class="bg-gray-950 p-6 w-72 h-screen fixed top-0 left-0 transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-10">
+        <nav class="space-y-4 mt-6">
+            <div class="block p-3 rounded-xl hover:bg-gray-800 flex items-center">
+                <img id="sidebar-profile-image" src="assets/images/default-avatar.png" alt="Profile" class="w-10 h-10 rounded-full mr-3">
+                <span id="sidebar-username" class="font-bold text-base md:text-lg"></span>
+            </div>
+            <a href="dashboard.html" class="block p-3 rounded-xl hover:bg-gray-800 text-base md:text-lg font-semibold"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</a>
+            <a href="lessons.html" class="block p-3 rounded-xl hover:bg-gray-800 text-base md:text-lg font-semibold"><i class="fas fa-book-open mr-2"></i>Lessons</a>
+            <a href="forum.html" class="block p-3 rounded-xl bg-gray-800 text-base md:text-lg font-semibold"><i class="fas fa-comments mr-2"></i>Forum</a>
+            <a href="games.html" class="block p-3 rounded-xl hover:bg-gray-800 text-base md:text-lg font-semibold"><i class="fas fa-gamepad mr-2"></i>Games</a>
+            <a href="profile.html" class="block p-3 rounded-xl hover:bg-gray-800 text-base md:text-lg font-semibold"><i class="fas fa-user-circle mr-2"></i>Profile</a>
+            <button id="logout" class="block p-3 text-left w-full rounded-xl hover:bg-gray-800 text-red-400 text-base md:text-lg font-semibold"><i class="fas fa-sign-out-alt mr-2"></i>Logout</button>
         </nav>
     </aside>
-    <main class="md:ml-64 p-4 pt-16 sm:p-6 sm:pt-20 min-h-screen">
-        <h1 class="text-3xl font-bold mb-8 animate-fade-in-down">Learning Forum 🎤</h1>
-        <section class="bg-gray-800 p-6 rounded-xl shadow-lg mb-8 animate-slide-in-up border border-white">
-            <h3 class="text-xl font-semibold mb-4"><i class="fas fa-comment-dots mr-2"></i>Post a Question</h3>
-            <textarea id="forum-text" class="w-full p-3 rounded-lg bg-gray-700 text-white focus:ring-2 focus:ring-white" placeholder="Ask something... 💭" rows="4"></textarea>
-            <button id="post-btn" class="mt-4 bg-gradient-to-r from-white to-gray-700 text-gray-900 px-6 py-2 rounded-full hover:from-gray-100 hover:to-gray-600 hover:scale-105 transition-all duration-300 shadow-lg animate-bounce">Post 📢</button>
-        </section>
-        <section id="forum-posts" class="space-y-6 pb-20"></section>
-        <footer class="bg-gray-800 p-6 text-center animate-fade-in-up">
-            <p class="text-sm">© 2025 EduEngage. All rights reserved.</p>
-            <div class="mt-2 space-x-4">
-                <a href="#" class="hover:text-gray-200 transition-colors duration-300">Privacy</a>
-                <a href="#" class="hover:text-gray-200 transition-colors duration-300">Terms</a>
-                <a href="#" class="hover:text-gray-200 transition-colors duration-300">Contact</a>
-            </div>
-        </footer>
-    </main>
-    <script src="assets/js/app.js"></script>
+    <div class="md:ml-72 p-8">
+        <button id="menu-toggle" class="md:hidden text-3xl mb-6"><i class="fas fa-bars"></i></button>
+        <h1 class="text-3xl md:text-5xl font-extrabold mb-8 animate-slide-up"><i class="fas fa-users mr-2"></i>Community Forum</h1>
+        <textarea id="forum-text" class="w-full p-4 rounded-lg text-gray-900 text-base md:text-lg font-medium mb-4" placeholder="Share your thoughts..."></textarea>
+        <button id="post-btn" class="bg-gold-600 hover:bg-gold-700 text-black py-3 px-6 rounded-xl font-bold transition mb-8"><i class="fas fa-paper-plane mr-2"></i>Post</button>
+        <select id="sort-posts" class="p-3 rounded-lg text-gray-900 text-base md:text-lg font-medium mb-6">
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="popular">Most Popular</option>
+        </select>
+        <div id="forum-posts" class="space-y-6"></div>
+    </div>
+    <script src="assets/js/app.js" defer></script>
 </body>
 </html>
