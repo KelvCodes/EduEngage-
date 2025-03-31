@@ -1,1 +1,232 @@
 
+/* assets/css/styles.css */
+:root {
+    --transition: all 0.3s ease;
+    --black-start: #000000; /* Pure Black */
+    --black-end: #374151;   /* Dark Gray */
+    --gold-start: #d4af37;  /* Gold */
+    --gold-end: #b8860b;    /* Darker Gold */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+}
+
+.bg-gradient-to-br {
+    background: linear-gradient(to bottom right, var(--black-start), #1f2937, var(--black-end));
+}
+
+.bg-gold-600 {
+    background-color: var(--gold-start);
+}
+
+.bg-gold-700 {
+    background-color: var(--gold-end);
+}
+
+.bg-gray-700 {
+    background-color: #374151;
+}
+
+.bg-gray-800 {
+    background-color: #1f2937;
+}
+
+.bg-gray-950 {
+    background-color: #0f172a;
+}
+
+.text-gold-400 {
+    color: #d4af37;
+}
+
+/* Default Text Sizes and Weights (Desktop) */
+h1 {
+    font-size: 2.5rem; /* 40px */
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 2rem; /* 32px */
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 600;
+}
+
+p, input, select, button, a, span, textarea {
+    font-size: 1.125rem; /* 18px */
+    font-weight: 500;
+}
+
+/* Button and Link Transitions */
+button, a {
+    transition: var(--transition);
+}
+
+button:hover, a:hover {
+    transform: scale(1.05);
+}
+
+/* Sidebar */
+.sidebar {
+    background: #0f172a; /* Very Dark Gray */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar nav div, .sidebar nav a, .sidebar nav button {
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.sidebar nav img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 0.75rem;
+}
+
+.sidebar nav .font-bold {
+    flex-grow: 1;
+}
+
+/* Lesson Card */
+.lesson-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: var(--transition);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    animation: slideIn 0.6s ease forwards;
+}
+
+.lesson-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    border-color: var(--gold-start);
+}
+
+.lesson-card button {
+    background: linear-gradient(to right, var(--gold-start), var(--gold-end));
+    color: black;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Course Progress */
+.course-progress {
+    background: rgba(255, 255, 255, 0.2);
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.course-progress-bar {
+    background: linear-gradient(to right, var(--gold-start), var(--gold-end));
+    height: 100%;
+    transition: width 0.5s ease;
+}
+
+/* Forum Post */
+.forum-post {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    animation: slideIn 0.6s ease forwards;
+}
+
+/* Animations */
+.animate-fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s ease forwards;
+}
+
+.animate-slide-in {
+    animation: slideIn 0.6s ease forwards;
+}
+
+.animate-pulse-btn {
+    animation: pulseBtn 2s infinite ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseBtn {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.75rem; /* 28px */
+        font-weight: 700;
+    }
+    h2 {
+        font-size: 1.5rem; /* 24px */
+        font-weight: 600;
+    }
+    h3 {
+        font-size: 1.125rem; /* 18px */
+        font-weight: 600;
+    }
+    h4 {
+        font-size: 1rem; /* 16px */
+        font-weight: 500;
+    }
+    p, input, select, button, a, span, textarea {
+        font-size: 0.875rem; /* 14px */
+        font-weight: 400;
+    }
+    .sidebar {
+        width: 220px;
+    }
+    .lesson-card, .forum-post {
+        padding: 1rem;
+    }
+    .lesson-card button {
+        padding: 0.5rem 1rem;
+    }
+    iframe {
+        height: 200px;
+    }
+    img#profile-image {
+        width: 80px;
+        height: 80px;
+    }
+    header {
+        padding: 0.75rem 1.5rem;
+    }
+    #offline-toggle {
+        padding: 0.5rem 1rem;
+    }
+}
