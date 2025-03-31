@@ -1,1 +1,47 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Detail - LearnSphere</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white min-h-screen">
+    <aside id="sidebar" class="bg-gray-950 p-6 w-72 h-screen fixed top-0 left-0 transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-10">
+        <nav class="space-y-4 mt-6">
+            <div class="block p-3 rounded-xl hover:bg-gray-800 flex items-center">
+                <img id="sidebar-profile-image" src="assets/images/default-avatar.png" alt="Profile" class="w-10 h-10 rounded-full mr-3">
+                <span id="sidebar-username" class="font-bold text-base md:text-lg"></span>
+            </div>
+            <a href="dashboard.html" class="block p-3 rounded-xl hover:bg-gray-800 text-base md:text-lg font-semibold"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</a>
+            <a href="lessons.html" class="block p-3 rounded-xl bg-gray-800 text-base md:text-lg font-semibold"><i class="fas fa-book-open mr-2"></i>Lessons</a>
+            <a href="forum.html" class="block p-3 rounded-xl hover:bg-gray-800 text-base md:text-lg font-semibold"><i class="fas fa-comments mr-2"></i>Forum</a>
+            <a href="games.html" class="block p-3 rounded-xl hover:bg-gray-800 text-base md:text-lg font-semibold"><i class="fas fa-gamepad mr-2"></i>Games</a>
+            <a href="profile.html" class="block p-3 rounded-xl hover:bg-gray-800 text-base md:text-lg font-semibold"><i class="fas fa-user-circle mr-2"></i>Profile</a>
+            <button id="logout" class="block p-3 text-left w-full rounded-xl hover:bg-gray-800 text-red-400 text-base md:text-lg font-semibold"><i class="fas fa-sign-out-alt mr-2"></i>Logout</button>
+        </nav>
+    </aside>
+    <div class="md:ml-72 p-8">
+        <button id="menu-toggle" class="md:hidden text-3xl mb-6"><i class="fas fa-bars"></i></button>
+        <h1 id="lesson-title" class="text-3xl md:text-5xl font-extrabold mb-6 animate-slide-up"><i class="fas fa-chalkboard-teacher mr-2"></i></h1>
+        <p id="lesson-description" class="text-lg md:text-xl font-medium mb-4"></p>
+        <p class="text-base md:text-lg font-medium mb-6">Difficulty: <span id="lesson-difficulty"></span> | Category: <span id="lesson-category"></span></p>
+        <div class="course-progress mb-6"><div id="lesson-progress-bar" class="course-progress-bar"></div></div>
+        <p id="progress-text" class="text-base md:text-lg font-medium mb-6 animate-fade-in"></p>
+        <iframe id="lesson-video" class="w-full h-64 md:h-96 mb-8 lazy-load rounded-xl shadow-lg" data-src="" frameborder="0" allowfullscreen></iframe>
+        <div id="pdf-resources" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8"></div>
+        <div id="exercises" class="space-y-6 mb-8"></div>
+        <p id="exercise-feedback" class="text-base md:text-lg font-medium mb-6 animate-fade-in"></p>
+        <button id="submit-exercises" class="bg-gold-600 hover:bg-gold-700 text-black py-3 px-6 rounded-xl font-bold transition mb-4"><i class="fas fa-check mr-2"></i>Submit Exercises</button>
+        <textarea id="lesson-notes" class="w-full p-4 rounded-lg text-gray-900 text-base md:text-lg font-medium mb-4" placeholder="Your notes..."></textarea>
+        <button id="save-notes" class="bg-gray-800 hover:bg-gray-700 text-white py-3 px-6 rounded-xl font-bold transition mb-4"><i class="fas fa-save mr-2"></i>Save Notes</button>
+        <button id="mark-complete" class="bg-gold-600 hover:bg-gold-700 text-black py-3 px-6 rounded-xl font-bold transition"><i class="fas fa-check-circle mr-2"></i>Mark Complete</button>
+        <h3 class="text-xl md:text-2xl font-bold mt-8 mb-4"><i class="fas fa-link mr-2"></i>Related Courses</h3>
+        <div id="related-courses" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+    <script src="assets/js/app.js" defer></script>
+</body>
+</html>
