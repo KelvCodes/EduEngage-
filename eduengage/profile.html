@@ -1,1 +1,54 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - LearnSphere</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white min-h-screen">
+    <aside id="sidebar" class="bg-gray-950 p-6 w-72 h-screen fixed top-0 left-0 transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-10">
+        <nav class="space-y-4 mt-6">
+            <div class="block p-3 rounded-xl hover:bg-gray-800 flex items-center">
+                <img id="sidebar-profile-image" src="assets/images/default-avatar.png" alt="Profile" class="w-10 h-10 rounded-full mr-3">
+                <span id="sidebar-username" class="font-bold text-base md:text-lg"></span>
+            </div>
+            <a href="dashboard.html" class="block p-3 rounded-xl hover:bg-gray-800 text-base md:text-lg font-semibold"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</a>
+            <a href="lessons.html" class="block p-3 rounded-xl hover:bg-gray-800 text-base md:text-lg font-semibold"><i class="fas fa-book-open mr-2"></i>Lessons</a>
+            <a href="forum.html" class="block p-3 rounded-xl hover:bg-gray-800 text-base md:text-lg font-semibold"><i class="fas fa-comments mr-2"></i>Forum</a>
+            <a href="games.html" class="block p-3 rounded-xl hover:bg-gray-800 text-base md:text-lg font-semibold"><i class="fas fa-gamepad mr-2"></i>Games</a>
+            <a href="profile.html" class="block p-3 rounded-xl bg-gray-800 text-base md:text-lg font-semibold"><i class="fas fa-user-circle mr-2"></i>Profile</a>
+            <button id="logout" class="block p-3 text-left w-full rounded-xl hover:bg-gray-800 text-red-400 text-base md:text-lg font-semibold"><i class="fas fa-sign-out-alt mr-2"></i>Logout</button>
+        </nav>
+    </aside>
+    <div class="md:ml-72 p-8">
+        <button id="menu-toggle" class="md:hidden text-3xl mb-6"><i class="fas fa-bars"></i></button>
+        <h1 class="text-3xl md:text-5xl font-extrabold mb-8 animate-slide-up"><i class="fas fa-user mr-2"></i>Profile</h1>
+        <div class="flex flex-col md:flex-row items-center mb-8">
+            <img id="profile-image" src="assets/images/default-avatar.png" alt="Profile" class="w-24 h-24 md:w-32 md:h-32 rounded-full mb-4 md:mb-0 md:mr-6 shadow-lg">
+            <div class="w-full">
+                <p id="profile-email" class="text-base md:text-lg font-medium mb-4"></p>
+                <input id="username-input" type="text" class="p-3 rounded-lg text-gray-900 text-base md:text-lg font-medium w-full mb-4" placeholder="Username">
+                <input id="profile-image-input" type="file" accept="image/*" class="text-base md:text-lg font-medium mb-4">
+                <button id="save-profile" class="bg-gold-600 hover:bg-gold-700 text-black py-3 px-6 rounded-xl font-bold transition"><i class="fas fa-save mr-2"></i>Save</button>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="lesson-card">
+                <h3 class="text-xl md:text-2xl font-bold"><i class="fas fa-star mr-2"></i>Points</h3>
+                <p id="profile-points" class="text-2xl md:text-3xl font-semibold mt-2"></p>
+            </div>
+            <div class="lesson-card">
+                <h3 class="text-xl md:text-2xl font-bold"><i class="fas fa-level-up-alt mr-2"></i>Level</h3>
+                <p id="profile-level" class="text-2xl md:text-3xl font-semibold mt-2"></p>
+            </div>
+        </div>
+        <h3 class="text-xl md:text-2xl font-bold mb-4"><i class="fas fa-medal mr-2"></i>Badges</h3>
+        <div id="badges" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+    <script src="assets/js/app.js" defer></script>
+</body>
+</html>
